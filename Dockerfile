@@ -16,7 +16,7 @@ WORKDIR /app
 # install pytorch, but without the nvidia-libs that are only necessary for gpu
 
 # install the requirements for running the whisper-live server
-COPY requirements/server.txt /app/
+COPY server.txt /app/
 RUN pip install --no-cache-dir -U "pip>=24" 
 RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu 
 RUN pip install --no-cache-dir  -r server.txt && rm server.txt
